@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Fotos del Rover en Marte</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Fotos del Rover en Marte</h1>
+      <p>Esta página muestra las fotos más recientes tomadas por los rovers de la NASA en Marte.</p>
+    
+      <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading">Número de Sol</h4>
+        <p>Un día en Marte se llama Sol, y cada misión de rover se divide en días de Sol. El número de Sol se refiere al número de días transcurridos desde que el rover aterrizó en Marte. Por ejemplo, el Sol 1 es el primer día de la misión, y el Sol 1000 es el día 1000 de la misión.</p>
+      </div>
+    
+      <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading">Rovers de Marte</h4>
+        <p>La NASA ha enviado varios rovers a Marte, cada uno con sus propias capacidades y objetivos. Los rovers disponibles en esta página son:</p>
+        <ul>
+          <li><strong>Curiosity:</strong> Rover con una amplia gama de instrumentos científicos para estudiar la geología y la atmósfera marciana.</li>
+          <li><strong>Opportunity:</strong> Rover que operó durante más de 14 años, estudiando la geología y buscando evidencia de agua en Marte.</li>
+          <li><strong>Spirit:</strong> Rover gemelo de Opportunity que estudió la geología y la atmósfera marciana durante 6 años.</li>
+        </ul>
+        <ul id="rovers">
+          <li id="curiosity">
+            <h5>Curiosity</h5>
+            <p>Días en Marte: <span id="curiosity-days"></span></p>
+          </li>
+          <li id="opportunity">
+            <h5>Opportunity</h5>
+            <p>Días en Marte: <span id="opportunity-days"></span></p>
+          </li>
+          <li id="spirit">
+            <h5>Spirit</h5>
+            <p>Días en Marte: <span id="spirit-days"></span></p>
+          </li>
+        </ul>
+      </div>
+    
+      <form>
+        <div class="form-group">
+          <label for="rover-select">Seleccionar Rover:</label>
+          <select class="form-control" id="rover-select">
+            <option value="curiosity">Curiosity</option>
+            <option value="opportunity">Opportunity</option>
+            <option value="spirit">Spirit</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sol">Número de sol:</label>
+          <input type="number" class="form-control" id="sol" name="sol">
+        </div>
+        <button type="button" class="btn btn-primary" onclick="getMarsPhotos()">Mostrar fotos</button>
+      </form>
+    
+      <div id="photos"></div>
+    </div>
+    
+    <script src="app.js"></script>
+  </body>
+</html>
